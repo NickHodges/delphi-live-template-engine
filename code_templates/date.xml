@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<codetemplate	xmlns="http://schemas.borland.com/Delphi/2005/codetemplates"
+				version="1.0.0">
+	<template name="date" invoke="manual">
+		<description>
+			Inserts the Current Date at the point where the template is invoked
+		</description>
+		<author>
+			CodeGear
+		</author>
+		<point name="date">
+            <text>
+                date
+            </text>
+            <hint>
+                Current Date
+            </hint>
+		</point>
+		<script language="DateTimeScript" onvalidate="true">
+		   date=InsertDate
+		   dateformatstr=mmmm dd, yyyy
+		</script>
+		<code language="Delphi" delimiter="|"><![CDATA[
+|date|
+		]]>
+		</code>
+	</template>
+</codetemplate>
