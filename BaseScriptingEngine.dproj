@@ -124,7 +124,7 @@
 			<DCCReference Include="vcl.dcp"/>
 			<DCCReference Include="rtl.dcp"/>
 			<DCCReference Include="uBaseScriptEngine.pas"/>
-			<DCCReference Include="..\NixUtils\NixUtils.pas"/>
+			<DCCReference Include="NixUtils.pas"/>
 			<BuildConfiguration Include="Base">
 				<Key>Base</Key>
 				<DependentOn>ScriptingEngineOptionSet.optset</DependentOn>
