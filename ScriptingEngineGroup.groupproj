@@ -1,54 +1,74 @@
-﻿<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
-  <PropertyGroup>
-    <ProjectGuid>{5aa57e64-1a5d-4c36-ac86-6efd2137b83a}</ProjectGuid>
-  </PropertyGroup>
-  <ItemGroup />
-  <ItemGroup>
-    <Projects Include="AssemblyInfoScriptingEngine.dproj" />
-    <Projects Include="BaseScriptingEngine.dproj" />
-    <Projects Include="DateTimeScriptEngine.dproj" />
-  </ItemGroup>
-  <ProjectExtensions>
-    <Borland.Personality>Default.Personality</Borland.Personality>
-    <Borland.ProjectType />
-    <BorlandProject>
-<BorlandProject xmlns=""><Default.Personality></Default.Personality></BorlandProject></BorlandProject>
-  </ProjectExtensions>
-  <Target Name="BaseScriptingEngine">
-    <MSBuild Projects="BaseScriptingEngine.dproj" Targets="" />
-  </Target>
-  <Target Name="BaseScriptingEngine:Clean">
-    <MSBuild Projects="BaseScriptingEngine.dproj" Targets="Clean" />
-  </Target>
-  <Target Name="BaseScriptingEngine:Make">
-    <MSBuild Projects="BaseScriptingEngine.dproj" Targets="Make" />
-  </Target>
-  <Target Name="AssemblyInfoScriptingEngine">
-    <MSBuild Projects="AssemblyInfoScriptingEngine.dproj" Targets="" />
-  </Target>
-  <Target Name="AssemblyInfoScriptingEngine:Clean">
-    <MSBuild Projects="AssemblyInfoScriptingEngine.dproj" Targets="Clean" />
-  </Target>
-  <Target Name="AssemblyInfoScriptingEngine:Make">
-    <MSBuild Projects="AssemblyInfoScriptingEngine.dproj" Targets="Make" />
-  </Target>
-  <Target Name="DateTimeScriptEngine">
-    <MSBuild Projects="DateTimeScriptEngine.dproj" Targets="" />
-  </Target>
-  <Target Name="DateTimeScriptEngine:Clean">
-    <MSBuild Projects="DateTimeScriptEngine.dproj" Targets="Clean" />
-  </Target>
-  <Target Name="DateTimeScriptEngine:Make">
-    <MSBuild Projects="DateTimeScriptEngine.dproj" Targets="Make" />
-  </Target>
-  <Target Name="Build">
-    <CallTarget Targets="BaseScriptingEngine;AssemblyInfoScriptingEngine;DateTimeScriptEngine" />
-  </Target>
-  <Target Name="Clean">
-    <CallTarget Targets="BaseScriptingEngine:Clean;AssemblyInfoScriptingEngine:Clean;DateTimeScriptEngine:Clean" />
-  </Target>
-  <Target Name="Make">
-    <CallTarget Targets="BaseScriptingEngine:Make;AssemblyInfoScriptingEngine:Make;DateTimeScriptEngine:Make" />
-  </Target>
-  <Import Condition="Exists('$(MSBuildBinPath)\Borland.Group.Targets')" Project="$(MSBuildBinPath)\Borland.Group.Targets" />
-</Project>
+﻿	<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+		<PropertyGroup>
+			<ProjectGuid>{5aa57e64-1a5d-4c36-ac86-6efd2137b83a}</ProjectGuid>
+		</PropertyGroup>
+		<ItemGroup>
+			<Projects Include="BaseScriptingEngine.dproj">
+				<Dependencies/>
+			</Projects>
+			<Projects Include="AssemblyInfoScriptingEngine.dproj">
+				<Dependencies/>
+			</Projects>
+			<Projects Include="DateTimeScriptEngine.dproj">
+				<Dependencies/>
+			</Projects>
+			<Projects Include="Test\DelphiLiveTemplateEngine.dproj">
+				<Dependencies/>
+			</Projects>
+		</ItemGroup>
+		<ProjectExtensions>
+			<Borland.Personality>Default.Personality.12</Borland.Personality>
+			<Borland.ProjectType/>
+			<BorlandProject>
+				<BorlandProject>
+					<Default.Personality/>
+				</BorlandProject>
+			</BorlandProject>
+		</ProjectExtensions>
+		<Target Name="BaseScriptingEngine">
+			<MSBuild Projects="BaseScriptingEngine.dproj"/>
+		</Target>
+		<Target Name="BaseScriptingEngine:Clean">
+			<MSBuild Targets="Clean" Projects="BaseScriptingEngine.dproj"/>
+		</Target>
+		<Target Name="BaseScriptingEngine:Make">
+			<MSBuild Targets="Make" Projects="BaseScriptingEngine.dproj"/>
+		</Target>
+		<Target Name="AssemblyInfoScriptingEngine">
+			<MSBuild Projects="AssemblyInfoScriptingEngine.dproj"/>
+		</Target>
+		<Target Name="AssemblyInfoScriptingEngine:Clean">
+			<MSBuild Targets="Clean" Projects="AssemblyInfoScriptingEngine.dproj"/>
+		</Target>
+		<Target Name="AssemblyInfoScriptingEngine:Make">
+			<MSBuild Targets="Make" Projects="AssemblyInfoScriptingEngine.dproj"/>
+		</Target>
+		<Target Name="DateTimeScriptEngine">
+			<MSBuild Projects="DateTimeScriptEngine.dproj"/>
+		</Target>
+		<Target Name="DateTimeScriptEngine:Clean">
+			<MSBuild Targets="Clean" Projects="DateTimeScriptEngine.dproj"/>
+		</Target>
+		<Target Name="DateTimeScriptEngine:Make">
+			<MSBuild Targets="Make" Projects="DateTimeScriptEngine.dproj"/>
+		</Target>
+		<Target Name="DelphiLiveTemplateEngine">
+			<MSBuild Projects="Test\DelphiLiveTemplateEngine.dproj"/>
+		</Target>
+		<Target Name="DelphiLiveTemplateEngine:Clean">
+			<MSBuild Targets="Clean" Projects="Test\DelphiLiveTemplateEngine.dproj"/>
+		</Target>
+		<Target Name="DelphiLiveTemplateEngine:Make">
+			<MSBuild Targets="Make" Projects="Test\DelphiLiveTemplateEngine.dproj"/>
+		</Target>
+		<Target Name="Build">
+			<CallTarget Targets="BaseScriptingEngine;AssemblyInfoScriptingEngine;DateTimeScriptEngine;DelphiLiveTemplateEngine"/>
+		</Target>
+		<Target Name="Clean">
+			<CallTarget Targets="BaseScriptingEngine:Clean;AssemblyInfoScriptingEngine:Clean;DateTimeScriptEngine:Clean;DelphiLiveTemplateEngine:Clean"/>
+		</Target>
+		<Target Name="Make">
+			<CallTarget Targets="BaseScriptingEngine:Make;AssemblyInfoScriptingEngine:Make;DateTimeScriptEngine:Make;DelphiLiveTemplateEngine:Make"/>
+		</Target>
+		<Import Project="$(BDS)\Bin\CodeGear.Group.Targets" Condition="Exists('$(BDS)\Bin\CodeGear.Group.Targets')"/>
+	</Project>

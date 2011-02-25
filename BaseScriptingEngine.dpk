@@ -34,6 +34,6 @@ requires
 
 contains
   uBaseScriptEngine in 'uBaseScriptEngine.pas',
-  NixUtils in '..\NixUtils\NixUtils.pas';
+  NixUtils in 'NixUtils.pas';
 
 end.
