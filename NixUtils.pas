@@ -14,12 +14,12 @@ uses
   Dialogs;
 
 type
-TnxBits = 0 .. 31;
-TDayHours = 0 .. 23;
+  TnxBits = 0 .. 31;
+  TDayHours = 0 .. 23;
 
-NixUtilsException = class(Exception);
+  NixUtilsException = class(Exception);
 
-TCharSet = set of AnsiChar;
+  TCharSet = set of AnsiChar;
 
 type
   TDatasetAction = (daOpen, daClose);
@@ -61,14 +61,14 @@ const
   BackSlash = '\';
   ForwardSlash = '/';
 
-{$IFDEF LINUX}
+{$IFDEF WINDOWS}
 
   PathSeparator = BackSlash;
   NewLine = CRLF;
 
 {$ENDIF}
 
-{$IFDEF WINDOWS}
+{$IFDEF LINUX}
 
   PathSeparator = ForwardSlash;
   NewLine = LF;
